@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
+import 'package:csv/csv.dart';
 import '../models/word_model.dart';
 
 /// 단어 데이터를 관리하는 Provider
@@ -22,14 +23,27 @@ class WordProvider extends ChangeNotifier {
   
   bool get hasMoreWords => _currentWordIndex < _currentQuizWords.length - 1;
   
-  /// JSON 파일에서 단어 데이터 로드
+  /// CSV 파일에서 단어 데이터 로드
   Future<void> loadWords() async {
     try {
-      final String jsonString = await rootBundle.loadString('assets/data/words.json');
-      final List<dynamic> jsonList = jsonDecode(jsonString);
+      final String csvString = await rootBundle.loadString('assets/data/words.csv');
+      final List<List<dynamic>> csvData = const CsvToListConverter().convert(csvString);
       
-      _allWords = jsonList.map((json) => WordModel.fromJson(json)).toList();
+      // 첫 번째 행은 헤더이므로 건너뜀
+      _allWords = csvData.skip(1).map((row) {
+        return WordModel(
+          english: row[0].toString(),
+          korean: row[1].toString(),
+          category: row[2].toString(),
+          difficulty: int.parse(row[3].toString()),
+          examples: [
+            row[4].toString(),
+            row[5].toString(),
+          ],
+        );
+      }).toList();
       
+      debugPrint('단어 로드 성공: ${_allWords.length}개');
       notifyListeners();
     } catch (e) {
       debugPrint('단어 데이터 로드 실패: $e');

@@ -46,6 +46,9 @@ dependencies:
   
   # Google Fonts for pixel art typography
   google_fonts: ^6.1.0
+  
+  # CSV parsing for word data
+  csv: ^6.0.0
 
 dev_dependencies:
   flutter_test:

@@ -3,12 +3,9 @@ import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../providers/game_provider.dart';
 import '../providers/word_provider.dart';
-import '../widgets/pixel_button.dart';
-import '../widgets/horizontal_slide_selector.dart';
-import '../widgets/blinking_button.dart';
 import 'quiz_screen.dart';
 
-/// 메인 홈 화면
+/// 메인 홈 화면 - 심플한 카드 기반 UI (배경 포함)
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -17,18 +14,15 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _selectedDifficulty = 1; // 1: Easy, 2: Medium, 3: Hard
-  int _selectedQuestionCount = 10; // 10, 15, or 20
+  String _selectedDifficulty = '쉬움';
+  int _selectedQuestionCount = 10;
 
-  final List<String> _difficultyLabels = ['쉬움', '보통', '어려움'];
-  final List<int> _questionCounts = [10, 15, 20];
-  
-  // 난이도별 색상 (초록/노랑/빨강)
-  final List<Color> _difficultyColors = [
-    const Color(0xFF4ade80), // Green - Easy
-    const Color(0xFFfbbf24), // Yellow - Medium
-    const Color(0xFFef4444), // Red - Hard
-  ];
+  final List<String> _difficultyOptions = ['쉬움', '보통', '어려움'];
+  final List<int> _questionCountOptions = [5, 10, 20];
+
+  int get _difficultyLevel {
+    return _difficultyOptions.indexOf(_selectedDifficulty) + 1;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,147 +36,215 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 16.0),
+            padding: const EdgeInsets.all(24.0),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 // 타이틀
                 Container(
-                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
                   decoration: BoxDecoration(
-                    color: Colors.black.withValues(alpha: 0.6),
-                    borderRadius: BorderRadius.circular(8),
+                    color: Colors.black.withValues(alpha: 0.7),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: Colors.white.withValues(alpha: 0.3), width: 2),
                   ),
-                  child: Center(
-                    child: Text(
-                      'WORD QUEST',
-                      style: GoogleFonts.pressStart2p(
-                        fontSize: 24, // 20 → 24로 증가
-                        color: Colors.white,
-                        shadows: [
-                          Shadow(
-                            blurRadius: 8,
-                            color: _difficultyColors[0],
-                            offset: const Offset(0, 0),
-                          ),
-                          const Shadow(
-                            color: Colors.black,
-                            offset: Offset(3, 3),
-                          ),
-                        ],
-                      ),
+                  child: Text(
+                    'WORD QUEST',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.pressStart2p(
+                      fontSize: 28,
+                      color: const Color(0xFF4CAF50),
+                      shadows: [
+                        Shadow(
+                          blurRadius: 8,
+                          color: const Color(0xFF4CAF50).withValues(alpha: 0.5),
+                          offset: const Offset(0, 0),
+                        ),
+                        const Shadow(
+                          blurRadius: 4,
+                          color: Colors.black,
+                          offset: Offset(2, 2),
+                        ),
+                      ],
                     ),
                   ),
                 ),
-                
-                const SizedBox(height: 24),
-                
-                // UI Section with semi-transparent background
-                Container(
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    color: Colors.black.withValues(alpha: 0.5),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Column(
-                    children: [
-                      // 1. 모험 시작 버튼 (가장 큰 버튼, 깜빡임) - 연두색 그라데이션
-                      BlinkingButton(
-                        label: '모험 시작',
-                        gradientColors: const [
-                          Color(0xFF8EEA8B), // 밝은 연두
-                          Color(0xFF4CAF50), // 진한 초록
-                        ],
-                        height: 80,
-                        onPressed: () => _startQuiz(context),
+
+                const SizedBox(height: 48),
+
+                // 게임 시작 버튼 (가장 크고 눈에 띄게)
+                SizedBox(
+                  height: 64,
+                  child: ElevatedButton.icon(
+                    icon: const Icon(Icons.play_arrow, size: 32),
+                    label: Text(
+                      '게임 시작',
+                      style: GoogleFonts.notoSans(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
                       ),
-                      
-                      const SizedBox(height: 24),
-                      
-                      // 2. 난이도 선택 (가로 슬라이드) - 연초록 그라데이션
-                      HorizontalSlideSelector(
-                        label: '난이도',
-                        options: _difficultyLabels,
-                        selectedIndex: _selectedDifficulty - 1,
-                        gradientColors: const [
-                          Color(0xFF8EEA8B), // 밝은 연초록
-                          Color(0xFF4CAF50), // 진한 초록
-                        ],
-                        onPrevious: () {
-                          setState(() {
-                            if (_selectedDifficulty > 1) _selectedDifficulty--;
-                          });
-                        },
-                        onNext: () {
-                          setState(() {
-                            if (_selectedDifficulty < 3) _selectedDifficulty++;
-                          });
-                        },
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF4CAF50),
+                      foregroundColor: Colors.white,
+                      elevation: 8,
+                      shadowColor: Colors.black.withValues(alpha: 0.5),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
                       ),
-                      
-                      const SizedBox(height: 19),
-                      
-                      // 3. 문항 수 선택 (가로 슬라이드) - 하늘색 그라데이션
-                      HorizontalSlideSelector(
-                        label: '문항 수',
-                        options: _questionCounts.map((count) => '$count 문제').toList(),
-                        selectedIndex: _questionCounts.indexOf(_selectedQuestionCount),
-                        gradientColors: const [
-                          Color(0xFF6EC6FF), // 밝은 하늘색
-                          Color(0xFF1E88E5), // 진한 파랑
-                        ],
-                        onPrevious: () {
-                          setState(() {
-                            int currentIndex = _questionCounts.indexOf(_selectedQuestionCount);
-                            if (currentIndex > 0) {
-                              _selectedQuestionCount = _questionCounts[currentIndex - 1];
-                            }
-                          });
-                        },
-                        onNext: () {
-                          setState(() {
-                            int currentIndex = _questionCounts.indexOf(_selectedQuestionCount);
-                            if (currentIndex < _questionCounts.length - 1) {
-                              _selectedQuestionCount = _questionCounts[currentIndex + 1];
-                            }
-                          });
-                        },
-                      ),
-                      
-                      const SizedBox(height: 20),
-                      
-                      // 4. 복습하기 버튼 - 노란색 그라데이션
-                      PixelButton(
-                        label: '복습하기',
-                        icon: Icons.menu_book,
-                        gradientColors: const [
-                          Color(0xFFFFE082), // 밝은 노랑
-                          Color(0xFFFBC02D), // 진한 노랑
-                        ],
-                        borderColor: const Color(0xFF000000),
-                        height: 56,
-                        onPressed: () => _startReview(context),
-                      ),
-                      
-                      const SizedBox(height: 14),
-                      
-                      // 5. 통계 버튼 - 핑크/보라 그라데이션
-                      PixelButton(
-                        label: '학습 통계',
-                        icon: Icons.bar_chart,
-                        gradientColors: const [
-                          Color(0xFFE1BEE7), // 밝은 핑크
-                          Color(0xFFBA68C8), // 진한 보라
-                        ],
-                        borderColor: const Color(0xFF000000),
-                        height: 56,
-                        onPressed: () => _showStats(context),
-                      ),
-                    ],
+                    ),
+                    onPressed: () => _startQuiz(context),
                   ),
                 ),
-                
-                // Bottom spacer to keep character area visible
-                const SizedBox(height: 100),
+
+                const SizedBox(height: 32),
+
+                // 설정 카드
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.black.withValues(alpha: 0.6),
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(color: Colors.white.withValues(alpha: 0.2), width: 2),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      children: [
+                        // 난이도 설정
+                        _SettingRow(
+                          title: '난이도',
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                            decoration: BoxDecoration(
+                              color: Colors.white.withValues(alpha: 0.1),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: DropdownButton<String>(
+                              value: _selectedDifficulty,
+                              underline: Container(),
+                              dropdownColor: const Color(0xFF1a1f2e),
+                              style: GoogleFonts.notoSans(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                              ),
+                              items: _difficultyOptions
+                                  .map((difficulty) => DropdownMenuItem(
+                                        value: difficulty,
+                                        child: Text(difficulty),
+                                      ))
+                                  .toList(),
+                              onChanged: (value) {
+                                if (value != null) {
+                                  setState(() {
+                                    _selectedDifficulty = value;
+                                  });
+                                }
+                              },
+                            ),
+                          ),
+                        ),
+
+                        Divider(height: 32, color: Colors.white.withValues(alpha: 0.2)),
+
+                        // 문항 수 설정
+                        _SettingRow(
+                          title: '문항 수',
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                            decoration: BoxDecoration(
+                              color: Colors.white.withValues(alpha: 0.1),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: DropdownButton<int>(
+                              value: _selectedQuestionCount,
+                              underline: Container(),
+                              dropdownColor: const Color(0xFF1a1f2e),
+                              style: GoogleFonts.notoSans(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                              ),
+                              items: _questionCountOptions
+                                  .map((count) => DropdownMenuItem(
+                                        value: count,
+                                        child: Text('$count 문제'),
+                                      ))
+                                  .toList(),
+                              onChanged: (value) {
+                                if (value != null) {
+                                  setState(() {
+                                    _selectedQuestionCount = value;
+                                  });
+                                }
+                              },
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
+                const SizedBox(height: 32),
+
+                // 하단 버튼 (복습하기, 학습 통계)
+                Row(
+                  children: [
+                    Expanded(
+                      child: OutlinedButton.icon(
+                        icon: const Icon(Icons.menu_book),
+                        label: Text(
+                          '복습하기',
+                          style: GoogleFonts.notoSans(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: const Color(0xFFFBC02D),
+                          backgroundColor: Colors.black.withValues(alpha: 0.3),
+                          side: const BorderSide(
+                            color: Color(0xFFFBC02D),
+                            width: 2,
+                          ),
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
+                        onPressed: () => _startReview(context),
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: OutlinedButton.icon(
+                        icon: const Icon(Icons.bar_chart),
+                        label: Text(
+                          '학습 통계',
+                          style: GoogleFonts.notoSans(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: const Color(0xFF9C27B0),
+                          backgroundColor: Colors.black.withValues(alpha: 0.3),
+                          side: const BorderSide(
+                            color: Color(0xFF9C27B0),
+                            width: 2,
+                          ),
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
+                        onPressed: () => _showStats(context),
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
@@ -190,64 +252,65 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-  
+
   void _startQuiz(BuildContext context) {
     final wordProvider = context.read<WordProvider>();
-    
+
     // 선택한 난이도와 문항 수로 퀴즈 설정
     wordProvider.setupQuiz(
-      difficulty: _selectedDifficulty,
+      difficulty: _difficultyLevel,
       count: _selectedQuestionCount,
     );
-    
+
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const QuizScreen()),
     );
   }
-  
+
   void _startReview(BuildContext context) {
     final gameProvider = context.read<GameProvider>();
     final wordProvider = context.read<WordProvider>();
-    
+
     if (gameProvider.gameState.weakWords.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
             '복습할 단어가 없습니다!',
-            style: GoogleFonts.pressStart2p(fontSize: 10),
+            style: GoogleFonts.notoSans(fontSize: 14),
           ),
           backgroundColor: const Color(0xFF6b7280),
         ),
       );
       return;
     }
-    
+
     // 약한 단어들로 퀴즈 설정
     wordProvider.setupReviewQuiz(gameProvider.gameState.weakWords);
-    
+
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const QuizScreen()),
     );
   }
-  
+
   void _showStats(BuildContext context) {
     final gameProvider = context.read<GameProvider>();
     final gameState = gameProvider.gameState;
-    
+
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
         backgroundColor: const Color(0xFF1a1f2e),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4),
-          side: const BorderSide(color: Colors.white, width: 3),
+          borderRadius: BorderRadius.circular(16),
+          side: const BorderSide(color: Colors.white, width: 2),
         ),
         title: Text(
           '학습 통계',
-          style: GoogleFonts.pressStart2p(
-            fontSize: 14,
+          style: GoogleFonts.notoSans(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
         ),
@@ -256,13 +319,13 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _StatRow('레벨', '${gameState.currentLevel}'),
-            const SizedBox(height: 8),
+            const SizedBox(height: 12),
             _StatRow('경험치', '${gameState.totalExp}'),
-            const SizedBox(height: 8),
+            const SizedBox(height: 12),
             _StatRow('코인', '${gameState.coins}'),
-            const SizedBox(height: 16),
-            _StatRow('마스터', '${gameState.masteredWords.length}개'),
-            const SizedBox(height: 8),
+            const SizedBox(height: 20),
+            _StatRow('마스터한 단어', '${gameState.masteredWords.length}개'),
+            const SizedBox(height: 12),
             _StatRow('약한 단어', '${gameState.weakWords.length}개'),
           ],
         ),
@@ -271,9 +334,10 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () => Navigator.pop(context),
             child: Text(
               '확인',
-              style: GoogleFonts.pressStart2p(
-                fontSize: 10,
-                color: const Color(0xFF4ade80),
+              style: GoogleFonts.notoSans(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                color: const Color(0xFF4CAF50),
               ),
             ),
           ),
@@ -283,7 +347,36 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-/// 통계 행
+/// 설정 행 위젯
+class _SettingRow extends StatelessWidget {
+  final String title;
+  final Widget child;
+
+  const _SettingRow({
+    required this.title,
+    required this.child,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          title,
+          style: GoogleFonts.notoSans(
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+            color: Colors.white,
+          ),
+        ),
+        child,
+      ],
+    );
+  }
+}
+
+/// 통계 행 위젯
 class _StatRow extends StatelessWidget {
   final String label;
   final String value;
@@ -297,15 +390,16 @@ class _StatRow extends StatelessWidget {
       children: [
         Text(
           label,
-          style: GoogleFonts.pressStart2p(
-            fontSize: 10,
-            color: Colors.white.withValues(alpha: 0.7),
+          style: GoogleFonts.notoSans(
+            fontSize: 14,
+            color: Colors.white70,
           ),
         ),
         Text(
           value,
-          style: GoogleFonts.pressStart2p(
-            fontSize: 10,
+          style: GoogleFonts.notoSans(
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
         ),

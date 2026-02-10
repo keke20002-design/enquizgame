@@ -1,0 +1,498 @@
+english,korean,category,difficulty,example1,example2
+apple,사과,fruits,1,I eat an apple.,The apple is red.
+banana,바나나,fruits,1,I like bananas.,Bananas are yellow.
+orange,오렌지,fruits,1,This orange is sweet.,I drink orange juice.
+grape,포도,fruits,1,Grapes are delicious.,I picked some grapes.
+strawberry,딸기,fruits,1,Strawberries are sweet.,I love strawberries.
+watermelon,수박,fruits,1,The watermelon is big.,Watermelon is refreshing.
+peach,복숭아,fruits,1,This peach is juicy.,I bought some peaches.
+pear,배,fruits,1,The pear is sweet.,I like pears.
+cherry,체리,fruits,2,Cherries are red.,I picked cherries.
+lemon,레몬,fruits,2,Lemons are sour.,I drink lemon water.
+cat,고양이,animals,1,I have a cat.,The cat is cute.
+dog,개,animals,1,My dog is big.,Dogs are friendly.
+rabbit,토끼,animals,1,The rabbit is fast.,I have a pet rabbit.
+bird,새,animals,1,Birds can fly.,I see a bird.
+fish,물고기,animals,1,Fish live in water.,I have a pet fish.
+mouse,쥐,animals,1,The mouse is small.,I saw a mouse.
+cow,소,animals,1,Cows give us milk.,The cow is big.
+pig,돼지,animals,1,Pigs are pink.,I saw a pig on the farm.
+horse,말,animals,1,Horses can run fast.,I ride a horse.
+sheep,양,animals,1,Sheep have wool.,I see many sheep.
+chicken,닭,animals,1,Chickens lay eggs.,I heard a chicken.
+duck,오리,animals,1,Ducks swim in the pond.,I feed the ducks.
+elephant,코끼리,animals,2,Elephants are large.,I saw an elephant at the zoo.
+lion,사자,animals,2,The lion is strong.,Lions live in Africa.
+tiger,호랑이,animals,2,Tigers are dangerous.,I saw a tiger in the jungle.
+bear,곰,animals,2,Bears are strong.,I saw a bear in the forest.
+monkey,원숭이,animals,2,Monkeys climb trees.,The monkey is funny.
+giraffe,기린,animals,2,Giraffes have long necks.,I saw a giraffe at the zoo.
+zebra,얼룩말,animals,2,Zebras have stripes.,The zebra is beautiful.
+penguin,펭귄,animals,2,Penguins live in Antarctica.,I like penguins.
+dolphin,돌고래,animals,2,Dolphins are smart.,I saw dolphins in the ocean.
+whale,고래,animals,3,Whales are huge.,Blue whales are the largest animals.
+kangaroo,캥거루,animals,3,Kangaroos jump high.,Kangaroos live in Australia.
+crocodile,악어,animals,3,Crocodiles are dangerous.,I saw a crocodile in the river.
+hippopotamus,하마,animals,3,Hippopotamuses are heavy.,The hippopotamus lives in water.
+rhinoceros,코뿔소,animals,3,Rhinoceroses have horns.,The rhinoceros is endangered.
+happy,행복한,adjectives,1,I am happy.,She looks happy today.
+sad,슬픈,adjectives,1,He is sad.,Don't be sad.
+big,큰,adjectives,1,This is a big house.,The elephant is big.
+small,작은,adjectives,1,This is a small box.,The mouse is small.
+good,좋은,adjectives,1,This is good.,You did a good job.
+bad,나쁜,adjectives,1,This is bad.,Bad weather today.
+hot,뜨거운,adjectives,1,The soup is hot.,It's hot today.
+cold,추운,adjectives,1,The water is cold.,It's cold outside.
+fast,빠른,adjectives,1,The car is fast.,He runs fast.
+slow,느린,adjectives,1,The turtle is slow.,Don't be slow.
+new,새로운,adjectives,1,I have a new book.,This is new.
+old,오래된,adjectives,1,This is an old house.,My grandfather is old.
+young,젊은,adjectives,1,She is young.,Young people like music.
+tall,키가 큰,adjectives,1,He is tall.,The building is tall.
+short,키가 작은,adjectives,1,She is short.,This pencil is short.
+long,긴,adjectives,1,The river is long.,Her hair is long.
+beautiful,아름다운,adjectives,2,She is beautiful.,What a beautiful day!
+pretty,예쁜,adjectives,2,The flower is pretty.,You look pretty.
+ugly,못생긴,adjectives,2,The monster is ugly.,Don't say ugly things.
+clean,깨끗한,adjectives,2,The room is clean.,Keep your hands clean.
+dirty,더러운,adjectives,2,The floor is dirty.,Wash your dirty clothes.
+easy,쉬운,adjectives,2,This is easy.,The test was easy.
+hard,어려운,adjectives,2,This is hard.,Math is hard for me.
+strong,강한,adjectives,2,He is strong.,The wind is strong.
+weak,약한,adjectives,2,I feel weak.,The signal is weak.
+rich,부유한,adjectives,2,He is rich.,Rich people have money.
+poor,가난한,adjectives,2,They are poor.,Poor children need help.
+smart,똑똑한,adjectives,2,She is smart.,Smart students study hard.
+stupid,어리석은,adjectives,2,Don't be stupid.,That was a stupid mistake.
+brave,용감한,adjectives,2,The soldier is brave.,Be brave!
+afraid,두려운,adjectives,2,I am afraid.,Don't be afraid.
+angry,화난,adjectives,2,He is angry.,Why are you angry?
+tired,피곤한,adjectives,2,I am tired.,She looks tired.
+hungry,배고픈,adjectives,2,I am hungry.,The dog is hungry.
+thirsty,목마른,adjectives,2,I am thirsty.,Are you thirsty?
+difficult,어려운,adjectives,3,This is difficult.,The problem is difficult.
+important,중요한,adjectives,3,This is important.,Education is important.
+dangerous,위험한,adjectives,3,This is dangerous.,Don't do dangerous things.
+interesting,흥미로운,adjectives,3,The book is interesting.,This is interesting.
+boring,지루한,adjectives,3,The movie is boring.,This class is boring.
+exciting,신나는,adjectives,3,The game is exciting.,What an exciting day!
+wonderful,멋진,adjectives,3,What a wonderful day!,This is wonderful.
+terrible,끔찍한,adjectives,3,The weather is terrible.,That was terrible.
+excellent,훌륭한,adjectives,3,Your work is excellent.,This is excellent!
+perfect,완벽한,adjectives,3,This is perfect.,Nobody is perfect.
+friend,친구,nouns,1,She is my friend.,I have many friends.
+school,학교,nouns,1,I go to school.,My school is big.
+book,책,nouns,1,I read a book.,This book is interesting.
+pen,펜,nouns,1,I write with a pen.,I need a pen.
+pencil,연필,nouns,1,This is my pencil.,I draw with a pencil.
+desk,책상,nouns,1,The desk is clean.,I study at my desk.
+chair,의자,nouns,1,Sit on the chair.,This chair is comfortable.
+table,테이블,nouns,1,The table is big.,Put it on the table.
+door,문,nouns,1,Close the door.,Open the door.
+window,창문,nouns,1,Open the window.,The window is clean.
+house,집,nouns,1,I live in a house.,My house is big.
+room,방,nouns,1,This is my room.,The room is clean.
+bed,침대,nouns,1,I sleep on the bed.,My bed is soft.
+car,자동차,nouns,1,My car is fast.,I drive a car.
+bus,버스,nouns,1,I take the bus.,The bus is coming.
+train,기차,nouns,1,I ride the train.,The train is fast.
+plane,비행기,nouns,1,The plane is flying.,I travel by plane.
+bike,자전거,nouns,1,I ride a bike.,My bike is new.
+ball,공,nouns,1,I play with a ball.,Throw the ball.
+toy,장난감,nouns,1,This is my toy.,I have many toys.
+computer,컴퓨터,nouns,2,I use a computer.,My computer is new.
+phone,전화,nouns,2,I have a phone.,Call me on the phone.
+television,텔레비전,nouns,2,I watch television.,The television is big.
+music,음악,nouns,2,I like music.,She listens to music.
+picture,그림,nouns,2,This is a nice picture.,I drew a picture.
+photo,사진,nouns,2,Take a photo.,I have many photos.
+movie,영화,nouns,2,I watch a movie.,The movie is good.
+game,게임,nouns,2,I play a game.,This game is fun.
+sport,스포츠,nouns,2,I like sports.,Sports are healthy.
+park,공원,nouns,2,I go to the park.,The park is beautiful.
+store,가게,nouns,2,I go to the store.,The store is open.
+hospital,병원,nouns,2,I go to the hospital.,The hospital is big.
+restaurant,식당,nouns,2,We eat at a restaurant.,This restaurant is good.
+library,도서관,nouns,2,I study at the library.,The library is quiet.
+museum,박물관,nouns,2,I visit the museum.,The museum is interesting.
+zoo,동물원,nouns,2,I go to the zoo.,The zoo has many animals.
+beach,해변,nouns,2,I go to the beach.,The beach is beautiful.
+mountain,산,nouns,2,The mountain is high.,I climb mountains.
+river,강,nouns,2,The river is long.,I swim in the river.
+lake,호수,nouns,2,The lake is calm.,We fish in the lake.
+adventure,모험,nouns,3,I love adventure.,This is a great adventure!
+knowledge,지식,nouns,3,Knowledge is power.,I gain knowledge from books.
+experience,경험,nouns,3,I have experience.,Experience is important.
+opportunity,기회,nouns,3,This is a good opportunity.,Don't miss this opportunity.
+problem,문제,nouns,3,I have a problem.,Solve the problem.
+solution,해결책,nouns,3,I found a solution.,What's the solution?
+question,질문,nouns,3,I have a question.,Ask a question.
+answer,답,nouns,3,I know the answer.,What's the answer?
+idea,아이디어,nouns,3,I have an idea.,That's a good idea.
+information,정보,nouns,3,I need information.,This information is useful.
+run,달리다,verbs,1,I run fast.,He runs every day.
+jump,뛰다,verbs,1,I can jump high.,The rabbit jumps.
+walk,걷다,verbs,1,I walk to school.,Let's walk together.
+sit,앉다,verbs,1,Please sit down.,I sit on the chair.
+stand,서다,verbs,1,Please stand up.,I stand here.
+sleep,자다,verbs,1,I sleep at night.,Go to sleep.
+eat,먹다,verbs,1,I eat breakfast.,Let's eat together.
+drink,마시다,verbs,1,I drink water.,Don't drink too much.
+play,놀다,verbs,1,I play with friends.,Let's play a game.
+study,공부하다,verbs,1,I study English.,Study hard!
+read,읽다,verbs,1,I read books.,Read this story.
+write,쓰다,verbs,1,I write a letter.,Write your name.
+draw,그리다,verbs,1,I draw pictures.,Draw a circle.
+sing,노래하다,verbs,1,She sings well.,I like to sing.
+dance,춤추다,verbs,1,They dance together.,I love to dance.
+swim,수영하다,verbs,2,I swim in the pool.,Fish swim in the water.
+fly,날다,verbs,2,Birds fly in the sky.,I want to fly.
+drive,운전하다,verbs,2,I drive a car.,He drives carefully.
+ride,타다,verbs,2,I ride a bike.,She rides a horse.
+cook,요리하다,verbs,2,I cook dinner.,Mom cooks well.
+clean,청소하다,verbs,2,I clean my room.,Clean the table.
+wash,씻다,verbs,2,I wash my hands.,Wash the dishes.
+watch,보다,verbs,2,I watch TV.,Watch this video.
+listen,듣다,verbs,2,I listen to music.,Listen carefully.
+speak,말하다,verbs,2,I speak English.,Speak louder.
+talk,이야기하다,verbs,2,I talk to my friend.,Let's talk.
+tell,말하다,verbs,2,Tell me a story.,I'll tell you later.
+ask,묻다,verbs,2,I ask a question.,Ask your teacher.
+answer,대답하다,verbs,2,I answer the question.,Please answer me.
+help,돕다,verbs,2,I help my mom.,Can you help me?
+teach,가르치다,verbs,3,I teach English.,Teachers teach students.
+learn,배우다,verbs,3,I learn new things.,We learn at school.
+understand,이해하다,verbs,3,I understand now.,Do you understand?
+remember,기억하다,verbs,3,I remember you.,Remember this.
+forget,잊다,verbs,3,Don't forget!,I forgot my book.
+think,생각하다,verbs,3,I think so.,Think carefully.
+know,알다,verbs,3,I know the answer.,Do you know him?
+believe,믿다,verbs,3,I believe you.,Believe in yourself.
+hope,희망하다,verbs,3,I hope so.,I hope you're well.
+want,원하다,verbs,3,I want this.,What do you want?
+sun,태양,nature,1,The sun is bright.,I see the sun.
+moon,달,nature,1,The moon is beautiful.,Look at the moon.
+star,별,nature,1,Stars shine at night.,I see many stars.
+sky,하늘,nature,1,The sky is blue.,Look at the sky.
+cloud,구름,nature,1,I see clouds.,The cloud is white.
+rain,비,nature,1,It's raining.,I like rain.
+snow,눈,nature,1,It's snowing.,Snow is white.
+wind,바람,nature,1,The wind is strong.,I feel the wind.
+tree,나무,nature,1,The tree is tall.,I climb a tree.
+flower,꽃,nature,1,The flower is pretty.,I pick flowers.
+grass,풀,nature,1,The grass is green.,Don't step on the grass.
+water,물,nature,1,I drink water.,Water is important.
+fire,불,nature,1,Fire is hot.,Be careful with fire.
+stone,돌,nature,1,This is a stone.,I throw a stone.
+sand,모래,nature,1,I play with sand.,The beach has sand.
+ocean,바다,nature,2,The ocean is blue.,I swim in the ocean.
+sea,바다,nature,2,The sea is calm.,I love the sea.
+forest,숲,nature,2,The forest is green.,I walk in the forest.
+island,섬,nature,2,We visit an island.,The island is beautiful.
+desert,사막,nature,2,The desert is hot.,Camels live in the desert.
+valley,계곡,nature,3,The valley is deep.,We hike through the valley.
+volcano,화산,nature,3,The volcano is active.,Volcanoes are dangerous.
+earthquake,지진,nature,3,An earthquake happened.,Earthquakes are scary.
+storm,폭풍,nature,3,A storm is coming.,The storm is strong.
+thunder,천둥,nature,3,I hear thunder.,Thunder is loud.
+head,머리,body,1,This is my head.,My head hurts.
+face,얼굴,body,1,Wash your face.,She has a pretty face.
+eye,눈,body,1,I have two eyes.,Close your eyes.
+ear,귀,body,1,I have two ears.,I hear with my ears.
+nose,코,body,1,I have a nose.,My nose is small.
+mouth,입,body,1,Open your mouth.,Close your mouth.
+tooth,이,body,1,Brush your teeth.,My tooth hurts.
+hand,손,body,1,Wash your hands.,I have two hands.
+finger,손가락,body,1,I have ten fingers.,Point with your finger.
+arm,팔,body,1,Raise your arm.,My arm is strong.
+leg,다리,body,1,I have two legs.,My leg hurts.
+foot,발,body,1,I have two feet.,My foot is big.
+toe,발가락,body,1,I have ten toes.,My toe hurts.
+hair,머리카락,body,2,My hair is long.,She has beautiful hair.
+neck,목,body,2,My neck hurts.,Giraffes have long necks.
+shoulder,어깨,body,2,My shoulder hurts.,Tap my shoulder.
+chest,가슴,body,2,My chest hurts.,He has a strong chest.
+stomach,배,body,2,My stomach hurts.,I'm hungry in my stomach.
+back,등,body,2,My back hurts.,He has a strong back.
+knee,무릎,body,2,My knee hurts.,I fell on my knee.
+heart,심장,body,3,My heart beats.,The heart pumps blood.
+brain,뇌,body,3,Use your brain.,The brain is important.
+lung,폐,body,3,Lungs help us breathe.,Smoking damages lungs.
+red,빨간색,colors,1,The apple is red.,I like red.
+blue,파란색,colors,1,The sky is blue.,Blue is my favorite color.
+yellow,노란색,colors,1,The sun is yellow.,Bananas are yellow.
+green,초록색,colors,1,The grass is green.,I like green.
+black,검은색,colors,1,The night is black.,I wear black shoes.
+white,하얀색,colors,1,Snow is white.,The cloud is white.
+orange,주황색,colors,1,The orange is orange.,I like orange.
+purple,보라색,colors,1,Grapes are purple.,Purple is pretty.
+pink,분홍색,colors,1,The flower is pink.,I like pink.
+brown,갈색,colors,1,The tree is brown.,I have brown hair.
+gray,회색,colors,2,The elephant is gray.,The sky is gray.
+silver,은색,colors,2,The coin is silver.,I like silver.
+gold,금색,colors,2,The ring is gold.,Gold is valuable.
+one,하나,numbers,1,I have one apple.,One plus one is two.
+two,둘,numbers,1,I have two eyes.,Two is a small number.
+three,셋,numbers,1,I have three books.,Count to three.
+four,넷,numbers,1,I have four legs.,Four is an even number.
+five,다섯,numbers,1,I have five fingers.,Give me five!
+six,여섯,numbers,1,I wake up at six.,Six is my lucky number.
+seven,일곱,numbers,1,There are seven days.,Seven is a lucky number.
+eight,여덟,numbers,1,I sleep eight hours.,Eight is an even number.
+nine,아홉,numbers,1,I have nine toys.,Nine is odd.
+ten,열,numbers,1,I have ten fingers.,Ten is a round number.
+hundred,백,numbers,2,One hundred dollars.,I count to one hundred.
+thousand,천,numbers,2,One thousand people.,A thousand thanks!
+million,백만,numbers,3,One million dollars.,Millions of stars.
+spring,봄,seasons,1,Spring is warm.,Flowers bloom in spring.
+summer,여름,seasons,1,Summer is hot.,I swim in summer.
+fall,가을,seasons,1,Fall is cool.,Leaves fall in fall.
+winter,겨울,seasons,1,Winter is cold.,It snows in winter.
+Monday,월요일,days,1,Today is Monday.,I go to school on Monday.
+Tuesday,화요일,days,1,Today is Tuesday.,Tuesday is the second day.
+Wednesday,수요일,days,1,Today is Wednesday.,Wednesday is in the middle.
+Thursday,목요일,days,1,Today is Thursday.,Thursday comes after Wednesday.
+Friday,금요일,days,1,Today is Friday.,Friday is the last school day.
+Saturday,토요일,days,1,Today is Saturday.,I rest on Saturday.
+Sunday,일요일,days,1,Today is Sunday.,Sunday is a holiday.
+January,1월,months,2,January is cold.,New Year is in January.
+February,2월,months,2,February is short.,Valentine's Day is in February.
+March,3월,months,2,March is windy.,Spring starts in March.
+April,4월,months,2,April has rain.,April showers bring flowers.
+May,5월,months,2,May is beautiful.,Mother's Day is in May.
+June,6월,months,2,June is warm.,Summer starts in June.
+July,7월,months,2,July is hot.,Independence Day is in July.
+August,8월,months,2,August is hot.,August is summer.
+September,9월,months,2,September is cool.,School starts in September.
+October,10월,months,2,October is fall.,Halloween is in October.
+November,11월,months,2,November is cold.,Thanksgiving is in November.
+December,12월,months,2,December is winter.,Christmas is in December.
+morning,아침,time,1,Good morning!,I wake up in the morning.
+afternoon,오후,time,1,Good afternoon!,I eat lunch in the afternoon.
+evening,저녁,time,1,Good evening!,I go home in the evening.
+night,밤,time,1,Good night!,I sleep at night.
+today,오늘,time,1,Today is Monday.,What day is today?
+yesterday,어제,time,2,Yesterday was Sunday.,I saw him yesterday.
+tomorrow,내일,time,2,Tomorrow is Tuesday.,See you tomorrow!
+week,주,time,2,One week has seven days.,I'll see you next week.
+month,달,time,2,One month has 30 days.,I'll visit next month.
+year,년,time,2,One year has 12 months.,Happy New Year!
+hour,시간,time,2,One hour has 60 minutes.,Wait one hour.
+minute,분,time,2,One minute has 60 seconds.,Wait a minute!
+second,초,time,2,One second is very short.,Just a second!
+breakfast,아침식사,food,1,I eat breakfast.,Breakfast is important.
+lunch,점심,food,1,I eat lunch.,What's for lunch?
+dinner,저녁식사,food,1,I eat dinner.,Dinner is ready.
+bread,빵,food,1,I eat bread.,This bread is fresh.
+rice,쌀,food,1,I eat rice.,Rice is white.
+meat,고기,food,1,I eat meat.,This meat is delicious.
+chicken,닭고기,food,1,I like chicken.,Chicken is healthy.
+egg,계란,food,1,I eat eggs.,Eggs are nutritious.
+milk,우유,food,1,I drink milk.,Milk is white.
+cheese,치즈,food,1,I like cheese.,Cheese is yellow.
+butter,버터,food,1,Put butter on bread.,Butter is soft.
+sugar,설탕,food,1,Sugar is sweet.,Don't eat too much sugar.
+salt,소금,food,1,Salt is salty.,Add some salt.
+pizza,피자,food,2,I love pizza.,Pizza is delicious.
+hamburger,햄버거,food,2,I eat a hamburger.,Hamburgers are popular.
+sandwich,샌드위치,food,2,I make a sandwich.,This sandwich is good.
+salad,샐러드,food,2,I eat salad.,Salad is healthy.
+soup,수프,food,2,I drink soup.,The soup is hot.
+cake,케이크,food,2,I eat cake.,The cake is sweet.
+cookie,쿠키,food,2,I like cookies.,Cookies are sweet.
+chocolate,초콜릿,food,2,I love chocolate.,Chocolate is delicious.
+ice cream,아이스크림,food,2,I eat ice cream.,Ice cream is cold.
+juice,주스,food,2,I drink juice.,Orange juice is good.
+coffee,커피,food,2,I drink coffee.,Coffee is hot.
+tea,차,food,2,I drink tea.,Tea is healthy.
+father,아버지,family,1,This is my father.,My father is kind.
+mother,어머니,family,1,This is my mother.,My mother is beautiful.
+brother,형제,family,1,I have a brother.,My brother is tall.
+sister,자매,family,1,I have a sister.,My sister is pretty.
+grandfather,할아버지,family,1,This is my grandfather.,My grandfather is old.
+grandmother,할머니,family,1,This is my grandmother.,My grandmother is kind.
+son,아들,family,2,I have a son.,My son is smart.
+daughter,딸,family,2,I have a daughter.,My daughter is beautiful.
+uncle,삼촌,family,2,This is my uncle.,My uncle is funny.
+aunt,이모,family,2,This is my aunt.,My aunt is kind.
+cousin,사촌,family,2,This is my cousin.,My cousin is my age.
+baby,아기,family,1,The baby is cute.,I have a baby sister.
+child,어린이,family,1,The child is playing.,I am a child.
+boy,소년,people,1,The boy is running.,He is a good boy.
+girl,소녀,people,1,The girl is singing.,She is a nice girl.
+man,남자,people,1,The man is tall.,He is a kind man.
+woman,여자,people,1,The woman is beautiful.,She is a smart woman.
+teacher,선생님,people,1,My teacher is kind.,The teacher teaches us.
+student,학생,people,1,I am a student.,Students study hard.
+doctor,의사,people,2,The doctor helps people.,I want to be a doctor.
+nurse,간호사,people,2,The nurse is kind.,Nurses help patients.
+police,경찰,people,2,The police helps us.,Police officers are brave.
+firefighter,소방관,people,2,Firefighters are brave.,The firefighter saves people.
+farmer,농부,people,2,Farmers grow food.,The farmer works hard.
+cook,요리사,people,2,The cook makes food.,Cooks work in restaurants.
+driver,운전사,people,2,The driver is careful.,Bus drivers drive buses.
+singer,가수,people,2,The singer is famous.,Singers sing songs.
+dancer,댄서,people,2,The dancer is graceful.,Dancers perform on stage.
+artist,예술가,people,3,The artist paints.,Artists are creative.
+scientist,과학자,people,3,Scientists do research.,The scientist is smart.
+engineer,엔지니어,people,3,Engineers build things.,The engineer is skilled.
+shirt,셔츠,clothes,1,I wear a shirt.,This shirt is blue.
+pants,바지,clothes,1,I wear pants.,These pants are new.
+dress,드레스,clothes,1,She wears a dress.,The dress is pretty.
+skirt,치마,clothes,1,She wears a skirt.,The skirt is short.
+shoes,신발,clothes,1,I wear shoes.,My shoes are comfortable.
+socks,양말,clothes,1,I wear socks.,These socks are warm.
+hat,모자,clothes,1,I wear a hat.,The hat is big.
+coat,코트,clothes,1,I wear a coat.,The coat is warm.
+jacket,재킷,clothes,2,I wear a jacket.,This jacket is cool.
+sweater,스웨터,clothes,2,I wear a sweater.,The sweater is soft.
+gloves,장갑,clothes,2,I wear gloves.,Gloves keep hands warm.
+scarf,스카프,clothes,2,I wear a scarf.,The scarf is colorful.
+belt,벨트,clothes,2,I wear a belt.,The belt is leather.
+tie,넥타이,clothes,2,He wears a tie.,The tie is formal.
+glasses,안경,accessories,2,I wear glasses.,Glasses help me see.
+watch,시계,accessories,2,I wear a watch.,The watch tells time.
+ring,반지,accessories,2,She wears a ring.,The ring is gold.
+necklace,목걸이,accessories,2,She wears a necklace.,The necklace is beautiful.
+bracelet,팔찌,accessories,3,She wears a bracelet.,The bracelet is silver.
+earring,귀걸이,accessories,3,She wears earrings.,The earrings are pretty.
+soccer,축구,sports,1,I play soccer.,Soccer is fun.
+baseball,야구,sports,1,I play baseball.,Baseball is popular.
+basketball,농구,sports,1,I play basketball.,Basketball is exciting.
+tennis,테니스,sports,2,I play tennis.,Tennis is fun.
+golf,골프,sports,2,I play golf.,Golf is relaxing.
+swimming,수영,sports,2,I like swimming.,Swimming is healthy.
+running,달리기,sports,2,I like running.,Running is good exercise.
+cycling,자전거타기,sports,2,I like cycling.,Cycling is fun.
+skiing,스키,sports,3,I like skiing.,Skiing is exciting.
+skating,스케이팅,sports,3,I like skating.,Skating is fun.
+guitar,기타,instruments,2,I play guitar.,The guitar sounds nice.
+piano,피아노,instruments,2,I play piano.,The piano is beautiful.
+drum,드럼,instruments,2,I play drums.,Drums are loud.
+violin,바이올린,instruments,3,I play violin.,The violin is elegant.
+flute,플루트,instruments,3,I play flute.,The flute sounds sweet.
+trumpet,트럼펫,instruments,3,I play trumpet.,The trumpet is loud.
+love,사랑,emotions,2,I love you.,Love is important.
+hate,미움,emotions,2,I hate lies.,Don't hate people.
+like,좋아함,emotions,1,I like apples.,What do you like?
+dislike,싫어함,emotions,2,I dislike rain.,What do you dislike?
+enjoy,즐기다,emotions,2,I enjoy music.,Enjoy your meal!
+fear,두려움,emotions,3,I have no fear.,Fear is natural.
+joy,기쁨,emotions,3,I feel joy.,Joy fills my heart.
+surprise,놀람,emotions,2,What a surprise!,I love surprises.
+worry,걱정,emotions,2,Don't worry.,I worry about you.
+hope,희망,emotions,3,I have hope.,Hope keeps us going.
+dream,꿈,emotions,2,I have a dream.,Dreams come true.
+wish,소원,emotions,2,I make a wish.,What's your wish?
+smile,미소,emotions,1,I smile.,Your smile is beautiful.
+laugh,웃음,emotions,1,I laugh.,Laughter is good.
+cry,울음,emotions,1,Don't cry.,Babies cry.
+shout,외침,emotions,2,Don't shout.,I heard you shout.
+whisper,속삭임,emotions,2,I whisper.,Whisper quietly.
+science,과학,subjects,2,I study science.,Science is interesting.
+math,수학,subjects,2,I study math.,Math is difficult.
+English,영어,subjects,1,I study English.,English is important.
+history,역사,subjects,2,I study history.,History is interesting.
+geography,지리,subjects,3,I study geography.,Geography teaches about places.
+art,미술,subjects,1,I study art.,Art is creative.
+music,음악,subjects,1,I study music.,Music is fun.
+physical education,체육,subjects,2,I like PE.,PE is active.
+literature,문학,subjects,3,I study literature.,Literature is beautiful.
+chemistry,화학,subjects,3,I study chemistry.,Chemistry is complex.
+physics,물리,subjects,3,I study physics.,Physics is challenging.
+biology,생물,subjects,3,I study biology.,Biology studies life.
+add,더하다,math,2,Add two and three.,I add numbers.
+subtract,빼다,math,2,Subtract two from five.,I subtract numbers.
+multiply,곱하다,math,3,Multiply two by three.,I multiply numbers.
+divide,나누다,math,3,Divide six by two.,I divide numbers.
+equal,같다,math,2,Two plus two equals four.,These are equal.
+plus,더하기,math,1,Two plus two.,Plus means add.
+minus,빼기,math,1,Five minus two.,Minus means subtract.
+circle,원,shapes,1,Draw a circle.,The circle is round.
+square,정사각형,shapes,1,Draw a square.,The square has four sides.
+triangle,삼각형,shapes,1,Draw a triangle.,The triangle has three sides.
+rectangle,직사각형,shapes,2,Draw a rectangle.,The rectangle is long.
+star,별,shapes,1,Draw a star.,The star has five points.
+heart,하트,shapes,1,Draw a heart.,The heart shape is lovely.
+diamond,다이아몬드,shapes,2,Draw a diamond.,The diamond shape is pretty.
+oval,타원,shapes,2,Draw an oval.,The oval is egg-shaped.
+cube,정육면체,shapes,3,This is a cube.,A cube has six faces.
+sphere,구,shapes,3,This is a sphere.,A sphere is round.
+cylinder,원기둥,shapes,3,This is a cylinder.,A cylinder is tube-shaped.
+pyramid,피라미드,shapes,3,This is a pyramid.,Pyramids are in Egypt.
+north,북,directions,2,Go north.,North is up on the map.
+south,남,directions,2,Go south.,South is down on the map.
+east,동,directions,2,Go east.,The sun rises in the east.
+west,서,directions,2,Go west.,The sun sets in the west.
+left,왼쪽,directions,1,Turn left.,My left hand.
+right,오른쪽,directions,1,Turn right.,My right hand.
+up,위,directions,1,Look up.,Go up the stairs.
+down,아래,directions,1,Look down.,Go down the stairs.
+front,앞,directions,1,In front of me.,The front door.
+back,뒤,directions,1,Behind me.,The back door.
+inside,안,directions,1,Come inside.,Inside the house.
+outside,밖,directions,1,Go outside.,Outside the house.
+near,가까운,directions,2,Come near.,The store is near.
+far,먼,directions,2,Too far away.,The city is far.
+here,여기,directions,1,Come here.,I am here.
+there,저기,directions,1,Go there.,Look over there.
+everywhere,어디든지,directions,3,I looked everywhere.,People are everywhere.
+nowhere,아무데도,directions,3,I went nowhere.,There's nowhere to go.
+always,항상,frequency,2,I always study.,Always be kind.
+never,절대,frequency,2,I never lie.,Never give up.
+sometimes,때때로,frequency,2,I sometimes play.,Sometimes it rains.
+often,자주,frequency,2,I often read.,I often visit.
+rarely,드물게,frequency,3,I rarely watch TV.,Rarely happens.
+usually,보통,frequency,2,I usually wake up early.,Usually it's sunny.
+seldom,좀처럼,frequency,3,I seldom eat candy.,Seldom seen.
+frequently,자주,frequency,3,I frequently exercise.,Frequently asked questions.
+occasionally,가끔,frequency,3,I occasionally swim.,Occasionally it snows.
+constantly,끊임없이,frequency,3,He constantly talks.,Constantly changing.
+very,매우,adverbs,1,Very good!,I'm very happy.
+too,너무,adverbs,1,Too hot!,Too much sugar.
+so,그래서,adverbs,1,So beautiful!,I'm so tired.
+really,정말,adverbs,1,Really good!,I really like it.
+quite,꽤,adverbs,2,Quite nice.,I'm quite sure.
+almost,거의,adverbs,2,Almost done.,Almost there.
+just,단지,adverbs,2,Just a minute.,I just arrived.
+only,오직,adverbs,2,Only one.,I only have this.
+even,심지어,adverbs,2,Even better!,Even I can do it.
+still,여전히,adverbs,2,Still waiting.,I still remember.
+already,이미,adverbs,2,Already finished.,I already know.
+yet,아직,adverbs,2,Not yet.,Have you eaten yet?
+soon,곧,adverbs,2,Coming soon.,See you soon!
+now,지금,adverbs,1,Do it now.,I'm busy now.
+then,그때,adverbs,2,See you then.,Then I left.
+later,나중에,adverbs,2,See you later.,I'll do it later.
+early,일찍,adverbs,2,Come early.,I wake up early.
+late,늦게,adverbs,2,Don't be late.,I came late.
+quickly,빠르게,adverbs,2,Run quickly.,Do it quickly.
+slowly,천천히,adverbs,2,Walk slowly.,Speak slowly.
+carefully,조심스럽게,adverbs,3,Drive carefully.,Listen carefully.
+loudly,크게,adverbs,2,Speak loudly.,Don't talk loudly.
+quietly,조용히,adverbs,2,Speak quietly.,Walk quietly.
+well,잘,adverbs,1,Done well!,I speak well.
+badly,나쁘게,adverbs,2,Done badly.,I played badly.
+together,함께,adverbs,2,Let's go together.,We work together.
+alone,혼자,adverbs,2,I live alone.,Don't go alone.
+yes,네,responses,1,Yes please.,Yes I can.
+no,아니요,responses,1,No thank you.,No I can't.
+please,제발,responses,1,Please help me.,Yes please.
+thank you,감사합니다,responses,1,Thank you very much.,Thank you for helping.
+sorry,미안합니다,responses,1,I'm sorry.,Sorry for being late.
+excuse me,실례합니다,responses,1,Excuse me please.,Excuse me for interrupting.
+hello,안녕하세요,greetings,1,Hello everyone!,Hello my friend.
+goodbye,안녕히 가세요,greetings,1,Goodbye everyone!,Goodbye my friend.
+welcome,환영합니다,greetings,1,Welcome home!,You're welcome.
+congratulations,축하합니다,greetings,2,Congratulations on your success!,Congratulations!
+good luck,행운을 빕니다,greetings,2,Good luck on your test!,Good luck!
+nice,좋은,general,1,Nice to meet you.,That's nice.
+great,훌륭한,general,1,Great job!,That's great!
+amazing,놀라운,general,2,Amazing work!,That's amazing!
+awesome,멋진,general,2,Awesome game!,That's awesome!
+fantastic,환상적인,general,2,Fantastic news!,That's fantastic!
+incredible,믿을 수 없는,general,3,Incredible story!,That's incredible!
+magnificent,장엄한,general,3,Magnificent view!,That's magnificent!
+marvelous,경이로운,general,3,Marvelous performance!,That's marvelous!
+splendid,훌륭한,general,3,Splendid idea!,That's splendid!
+superb,최고의,general,3,Superb quality!,That's superb!
