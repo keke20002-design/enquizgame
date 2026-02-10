@@ -1,0 +1,212 @@
+[
+  {
+    "english": "apple",
+    "korean": "사과",
+    "category": "fruits",
+    "difficulty": 1,
+    "examples": ["I eat an apple.", "The apple is red."]
+  },
+  {
+    "english": "banana",
+    "korean": "바나나",
+    "category": "fruits",
+    "difficulty": 1,
+    "examples": ["I like bananas.", "Bananas are yellow."]
+  },
+  {
+    "english": "orange",
+    "korean": "오렌지",
+    "category": "fruits",
+    "difficulty": 1,
+    "examples": ["This orange is sweet.", "I drink orange juice."]
+  },
+  {
+    "english": "grape",
+    "korean": "포도",
+    "category": "fruits",
+    "difficulty": 1,
+    "examples": ["Grapes are delicious.", "I picked some grapes."]
+  },
+  {
+    "english": "cat",
+    "korean": "고양이",
+    "category": "animals",
+    "difficulty": 1,
+    "examples": ["I have a cat.", "The cat is cute."]
+  },
+  {
+    "english": "dog",
+    "korean": "개",
+    "category": "animals",
+    "difficulty": 1,
+    "examples": ["My dog is big.", "Dogs are friendly."]
+  },
+  {
+    "english": "elephant",
+    "korean": "코끼리",
+    "category": "animals",
+    "difficulty": 2,
+    "examples": ["Elephants are large.", "I saw an elephant at the zoo."]
+  },
+  {
+    "english": "lion",
+    "korean": "사자",
+    "category": "animals",
+    "difficulty": 2,
+    "examples": ["The lion is strong.", "Lions live in Africa."]
+  },
+  {
+    "english": "tiger",
+    "korean": "호랑이",
+    "category": "animals",
+    "difficulty": 2,
+    "examples": ["Tigers are dangerous.", "I saw a tiger in the jungle."]
+  },
+  {
+    "english": "rabbit",
+    "korean": "토끼",
+    "category": "animals",
+    "difficulty": 1,
+    "examples": ["The rabbit is fast.", "I have a pet rabbit."]
+  },
+  {
+    "english": "beautiful",
+    "korean": "아름다운",
+    "category": "adjectives",
+    "difficulty": 2,
+    "examples": ["She is beautiful.", "What a beautiful day!"]
+  },
+  {
+    "english": "happy",
+    "korean": "행복한",
+    "category": "adjectives",
+    "difficulty": 1,
+    "examples": ["I am happy.", "She looks happy today."]
+  },
+  {
+    "english": "sad",
+    "korean": "슬픈",
+    "category": "adjectives",
+    "difficulty": 1,
+    "examples": ["He is sad.", "Don't be sad."]
+  },
+  {
+    "english": "big",
+    "korean": "큰",
+    "category": "adjectives",
+    "difficulty": 1,
+    "examples": ["This is a big house.", "The elephant is big."]
+  },
+  {
+    "english": "small",
+    "korean": "작은",
+    "category": "adjectives",
+    "difficulty": 1,
+    "examples": ["This is a small box.", "The mouse is small."]
+  },
+  {
+    "english": "difficult",
+    "korean": "어려운",
+    "category": "adjectives",
+    "difficulty": 3,
+    "examples": ["This is difficult.", "Math is difficult for me."]
+  },
+  {
+    "english": "easy",
+    "korean": "쉬운",
+    "category": "adjectives",
+    "difficulty": 2,
+    "examples": ["This is easy.", "The test was easy."]
+  },
+  {
+    "english": "adventure",
+    "korean": "모험",
+    "category": "nouns",
+    "difficulty": 3,
+    "examples": ["I love adventure.", "This is a great adventure!"]
+  },
+  {
+    "english": "friend",
+    "korean": "친구",
+    "category": "nouns",
+    "difficulty": 1,
+    "examples": ["She is my friend.", "I have many friends."]
+  },
+  {
+    "english": "school",
+    "korean": "학교",
+    "category": "nouns",
+    "difficulty": 1,
+    "examples": ["I go to school.", "My school is big."]
+  },
+  {
+    "english": "book",
+    "korean": "책",
+    "category": "nouns",
+    "difficulty": 1,
+    "examples": ["I read a book.", "This book is interesting."]
+  },
+  {
+    "english": "computer",
+    "korean": "컴퓨터",
+    "category": "nouns",
+    "difficulty": 2,
+    "examples": ["I use a computer.", "My computer is new."]
+  },
+  {
+    "english": "music",
+    "korean": "음악",
+    "category": "nouns",
+    "difficulty": 2,
+    "examples": ["I like music.", "She listens to music."]
+  },
+  {
+    "english": "run",
+    "korean": "달리다",
+    "category": "verbs",
+    "difficulty": 1,
+    "examples": ["I run fast.", "He runs every day."]
+  },
+  {
+    "english": "jump",
+    "korean": "뛰다",
+    "category": "verbs",
+    "difficulty": 1,
+    "examples": ["I can jump high.", "The rabbit jumps."]
+  },
+  {
+    "english": "swim",
+    "korean": "수영하다",
+    "category": "verbs",
+    "difficulty": 2,
+    "examples": ["I swim in the pool.", "Fish swim in the water."]
+  },
+  {
+    "english": "fly",
+    "korean": "날다",
+    "category": "verbs",
+    "difficulty": 2,
+    "examples": ["Birds fly in the sky.", "I want to fly."]
+  },
+  {
+    "english": "sing",
+    "korean": "노래하다",
+    "category": "verbs",
+    "difficulty": 2,
+    "examples": ["She sings well.", "I like to sing."]
+  },
+  {
+    "english": "dance",
+    "korean": "춤추다",
+    "category": "verbs",
+    "difficulty": 2,
+    "examples": ["They dance together.", "I love to dance."]
+  },
+  {
+    "english": "study",
+    "korean": "공부하다",
+    "category": "verbs",
+    "difficulty": 2,
+    "examples": ["I study English.", "She studies hard."]
+  }
+]
