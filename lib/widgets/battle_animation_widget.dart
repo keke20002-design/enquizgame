@@ -70,7 +70,7 @@ class _BattleAnimationWidgetState extends State<BattleAnimationWidget>
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 150,
+      height: 200,
       child: Stack(
         children: [
           // Progress bar track
@@ -83,7 +83,7 @@ class _BattleAnimationWidgetState extends State<BattleAnimationWidget>
           
           // Warrior sprite (left side) - fixed position, same height as monster
           Positioned(
-            left: 40, // Fixed position on left, same as monster's right: 40
+            left: 20, // Adjusted for larger sprite width
             bottom: 35, // Same height as monster (bottom: 60 → 35 to be above progress bar)
             child: AnimatedBuilder(
               animation: _animationController,
@@ -105,7 +105,7 @@ class _BattleAnimationWidgetState extends State<BattleAnimationWidget>
           
           // Monster sprite (right side) - same height as warrior
           Positioned(
-            right: 40,
+            right: 20,
             bottom: 35, // Same height as warrior
             child: AnimatedBuilder(
               animation: _animationController,
@@ -222,15 +222,15 @@ class _BattleAnimationWidgetState extends State<BattleAnimationWidget>
     
     return Image.asset(
       assetPath,
-      width: 64,
-      height: 64,
+      width: 120,
+      height: 120,
       fit: BoxFit.contain,
       errorBuilder: (context, error, stackTrace) {
         // Fallback to walk sprite if image not found
         return Image.asset(
           'assets/images/characters/warrior_walk.png',
-          width: 64,
-          height: 64,
+          width: 120,
+          height: 120,
           fit: BoxFit.contain,
         );
       },
@@ -251,27 +251,27 @@ class _BattleAnimationWidgetState extends State<BattleAnimationWidget>
     
     return Image.asset(
       assetPath,
-      width: 64,
-      height: 64,
+      width: 120,
+      height: 120,
       fit: BoxFit.contain,
       errorBuilder: (context, error, stackTrace) {
         // Fallback to walk sprite if image not found
         return Image.asset(
           'assets/images/characters/slimwalk.png',
-          width: 64,
-          height: 64,
+          width: 120,
+          height: 120,
           fit: BoxFit.contain,
           errorBuilder: (context, error, stackTrace) {
             // Final fallback to icon
             return Container(
-              width: 64,
-              height: 64,
+              width: 120,
+              height: 120,
               decoration: BoxDecoration(
                 color: Colors.green.shade700,
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(color: Colors.white, width: 2),
               ),
-              child: const Icon(Icons.bug_report, color: Colors.white, size: 40),
+              child: const Icon(Icons.bug_report, color: Colors.white, size: 80),
             );
           },
         );

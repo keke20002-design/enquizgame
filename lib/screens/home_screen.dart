@@ -27,228 +27,234 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/images/pixel_background_home.png'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(24.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                // 타이틀
-                Container(
-                  padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
-                  decoration: BoxDecoration(
-                    color: Colors.black.withValues(alpha: 0.7),
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: Colors.white.withValues(alpha: 0.3), width: 2),
-                  ),
-                  child: Text(
-                    'WORD QUEST',
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.pressStart2p(
-                      fontSize: 28,
-                      color: const Color(0xFF4CAF50),
-                      shadows: [
-                        Shadow(
-                          blurRadius: 8,
-                          color: const Color(0xFF4CAF50).withValues(alpha: 0.5),
-                          offset: const Offset(0, 0),
-                        ),
-                        const Shadow(
-                          blurRadius: 4,
-                          color: Colors.black,
-                          offset: Offset(2, 2),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-
-                const SizedBox(height: 48),
-
-                // 게임 시작 버튼 (가장 크고 눈에 띄게)
-                SizedBox(
-                  height: 64,
-                  child: ElevatedButton.icon(
-                    icon: const Icon(Icons.play_arrow, size: 32),
-                    label: Text(
-                      '게임 시작',
-                      style: GoogleFonts.notoSans(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF4CAF50),
-                      foregroundColor: Colors.white,
-                      elevation: 8,
-                      shadowColor: Colors.black.withValues(alpha: 0.5),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                    ),
-                    onPressed: () => _startQuiz(context),
-                  ),
-                ),
-
-                const SizedBox(height: 32),
-
-                // 설정 카드
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.black.withValues(alpha: 0.6),
-                    borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: Colors.white.withValues(alpha: 0.2), width: 2),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Column(
-                      children: [
-                        // 난이도 설정
-                        _SettingRow(
-                          title: '난이도',
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.1),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: DropdownButton<String>(
-                              value: _selectedDifficulty,
-                              underline: Container(),
-                              dropdownColor: const Color(0xFF1a1f2e),
-                              style: GoogleFonts.notoSans(
-                                fontSize: 16,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                              ),
-                              items: _difficultyOptions
-                                  .map((difficulty) => DropdownMenuItem(
-                                        value: difficulty,
-                                        child: Text(difficulty),
-                                      ))
-                                  .toList(),
-                              onChanged: (value) {
-                                if (value != null) {
-                                  setState(() {
-                                    _selectedDifficulty = value;
-                                  });
-                                }
-                              },
-                            ),
-                          ),
-                        ),
-
-                        Divider(height: 32, color: Colors.white.withValues(alpha: 0.2)),
-
-                        // 문항 수 설정
-                        _SettingRow(
-                          title: '문항 수',
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.1),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: DropdownButton<int>(
-                              value: _selectedQuestionCount,
-                              underline: Container(),
-                              dropdownColor: const Color(0xFF1a1f2e),
-                              style: GoogleFonts.notoSans(
-                                fontSize: 16,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                              ),
-                              items: _questionCountOptions
-                                  .map((count) => DropdownMenuItem(
-                                        value: count,
-                                        child: Text('$count 문제'),
-                                      ))
-                                  .toList(),
-                              onChanged: (value) {
-                                if (value != null) {
-                                  setState(() {
-                                    _selectedQuestionCount = value;
-                                  });
-                                }
-                              },
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-
-                const SizedBox(height: 32),
-
-                // 하단 버튼 (복습하기, 학습 통계)
-                Row(
-                  children: [
-                    Expanded(
-                      child: OutlinedButton.icon(
-                        icon: const Icon(Icons.menu_book),
-                        label: Text(
-                          '복습하기',
-                          style: GoogleFonts.notoSans(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        style: OutlinedButton.styleFrom(
-                          foregroundColor: const Color(0xFFFBC02D),
-                          backgroundColor: Colors.black.withValues(alpha: 0.3),
-                          side: const BorderSide(
-                            color: Color(0xFFFBC02D),
-                            width: 2,
-                          ),
-                          padding: const EdgeInsets.symmetric(vertical: 16),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                        ),
-                        onPressed: () => _startReview(context),
-                      ),
-                    ),
-                    const SizedBox(width: 16),
-                    Expanded(
-                      child: OutlinedButton.icon(
-                        icon: const Icon(Icons.bar_chart),
-                        label: Text(
-                          '학습 통계',
-                          style: GoogleFonts.notoSans(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        style: OutlinedButton.styleFrom(
-                          foregroundColor: const Color(0xFF9C27B0),
-                          backgroundColor: Colors.black.withValues(alpha: 0.3),
-                          side: const BorderSide(
-                            color: Color(0xFF9C27B0),
-                            width: 2,
-                          ),
-                          padding: const EdgeInsets.symmetric(vertical: 16),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                        ),
-                        onPressed: () => _showStats(context),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+      body: Stack(
+        children: [
+          // 배경
+          Positioned.fill(
+            child: Image.asset(
+              'assets/images/pixel_background_home.png',
+              fit: BoxFit.cover,
             ),
           ),
-        ),
+
+          // ✨ 알파벳 & 별 애니메이션
+          const FloatingMagicLayer(),
+
+          // 기존 UI (타이틀 + 버튼)
+          SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  // 타이틀
+                  Container(
+                    padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+                    // decoration: BoxDecoration(
+                    //   color: Colors.black.withValues(alpha: 0.7),
+                    //   borderRadius: BorderRadius.circular(12),
+                    //   border: Border.all(color: Colors.white.withValues(alpha: 0.3), width: 2),
+                    // ),
+                    child: Text(
+                      'WORD QUEST',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.pressStart2p(
+                        fontSize: 34,
+                        color: const Color(0xFFFFD700),//(0xFF4CAF50),
+                        shadows: [
+                          Shadow(
+                            blurRadius: 8,
+                            color: const Color(0xFFFFD700).withValues(alpha: 0.5),
+                            offset: const Offset(0, 0),
+                          ),
+                          const Shadow(
+                            blurRadius: 4,
+                            color: Colors.black,
+                            offset: Offset(2, 2),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 48),
+
+                  // 게임 시작 버튼 (가장 크고 눈에 띄게)
+                  SizedBox(
+                    height: 64,
+                    child: ElevatedButton.icon(
+                      icon: const Icon(Icons.play_arrow, size: 32),
+                      label: Text(
+                        '게임시작',
+                        style: GoogleFonts.notoSans(  //notoSans
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF4CAF50),
+                        foregroundColor: Colors.white,
+                        elevation: 8,
+                        shadowColor: Colors.black.withValues(alpha: 0.5),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      ),
+                      onPressed: () => _startQuiz(context),
+                    ),
+                  ),
+
+                  const SizedBox(height: 32),
+
+                  // 설정 카드
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.black.withValues(alpha: 0.6),
+                      borderRadius: BorderRadius.circular(16),
+                      border: Border.all(color: Colors.white.withValues(alpha: 0.2), width: 2),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Column(
+                        children: [
+                          // 난이도 설정
+                          _SettingRow(
+                            title: '난이도',
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withValues(alpha: 0.1),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: DropdownButton<String>(
+                                value: _selectedDifficulty,
+                                underline: Container(),
+                                dropdownColor: const Color(0xFF1a1f2e),
+                                style: GoogleFonts.notoSans(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                                items: _difficultyOptions
+                                    .map((difficulty) => DropdownMenuItem(
+                                          value: difficulty,
+                                          child: Text(difficulty),
+                                        ))
+                                    .toList(),
+                                onChanged: (value) {
+                                  if (value != null) {
+                                    setState(() {
+                                      _selectedDifficulty = value;
+                                    });
+                                  }
+                                },
+                              ),
+                            ),
+                          ),
+
+                          Divider(height: 32, color: Colors.white.withValues(alpha: 0.2)),
+
+                          // 문항 수 설정
+                          _SettingRow(
+                            title: '문항 수',
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withValues(alpha: 0.1),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: DropdownButton<int>(
+                                value: _selectedQuestionCount,
+                                underline: Container(),
+                                dropdownColor: const Color(0xFF1a1f2e),
+                                style: GoogleFonts.notoSans(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                                items: _questionCountOptions
+                                    .map((count) => DropdownMenuItem(
+                                          value: count,
+                                          child: Text('$count 문제'),
+                                        ))
+                                    .toList(),
+                                onChanged: (value) {
+                                  if (value != null) {
+                                    setState(() {
+                                      _selectedQuestionCount = value;
+                                    });
+                                  }
+                                },
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 32),
+
+                  // 하단 버튼 (복습하기, 학습 통계)
+                  Row(
+                    children: [
+                      Expanded(
+                        child: ElevatedButton.icon(
+                          icon: const Icon(Icons.menu_book, color: Colors.white),
+                          label: Text(
+                            '복습하기',
+                            style: GoogleFonts.notoSans(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white,
+                            ),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xFFFBC02D),
+                            foregroundColor: Colors.white,
+                            elevation: 4,
+                            shadowColor: Colors.black.withValues(alpha: 0.5),
+                            padding: const EdgeInsets.symmetric(vertical: 16),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                          onPressed: () => _startReview(context),
+                        ),
+                      ),
+                      const SizedBox(width: 16),
+                      Expanded(
+                        child: ElevatedButton.icon(
+                          icon: const Icon(Icons.bar_chart, color: Colors.white),
+                          label: Text(
+                            '학습 통계',
+                            style: GoogleFonts.notoSans(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white,
+                            ),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xFF9C27B0),
+                            foregroundColor: Colors.white,
+                            elevation: 4,
+                            shadowColor: Colors.black.withValues(alpha: 0.5),
+                            padding: const EdgeInsets.symmetric(vertical: 16),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                          onPressed: () => _showStats(context),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -404,6 +410,201 @@ class _StatRow extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class FloatingMagicLayer extends StatelessWidget {
+  const FloatingMagicLayer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      top: 40,
+      left: 0,
+      right: 0,
+      child: SizedBox(
+        height: 140,
+        child: Stack(
+          children: const [
+            FloatingLetter(text: 'SPELL', left: 60, delay: 0,color: Colors.purpleAccent),
+            FloatingLetter(text: 'QUIZ', left: 160, delay: 1,color: Colors.cyanAccent),
+            FloatingLetter(text: 'ATTACK', left: 280, delay: 2,color: Colors.redAccent),
+
+            FloatingLetter(text: 'POWER', left: 550, delay: 0,color: Colors.yellowAccent),
+            FloatingLetter(text: 'LEVEL', left: 670, delay: 1,color: Colors.greenAccent),
+            FloatingLetter(text: 'UP!', left: 770, delay: 2,color:Colors.redAccent),
+
+            FloatingStar(left: 40, top: 30, delay: 0, size: 18),
+            FloatingStar(left: 120, top: 20, delay: 1, size: 22),
+            FloatingStar(left: 200, top: 40, delay: 2, size: 16),
+            FloatingStar(left: 280, top: 25, delay: 3, size: 20),
+            FloatingStar(left: 340, top: 35, delay: 4, size: 18),
+
+            FloatingStar(left: 510, top: 30, delay: 0, size: 18),
+            FloatingStar(left: 570, top: 20, delay: 1, size: 22),
+            FloatingStar(left: 650, top: 40, delay: 2, size: 16),
+            FloatingStar(left: 720, top: 25, delay: 3, size: 20),
+            FloatingStar(left: 830, top: 35, delay: 4, size: 18),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class FloatingLetter extends StatefulWidget {
+  final String text;
+  final double left;
+  final int delay;
+  final Color color;
+
+  const FloatingLetter({
+    super.key,
+    required this.text,
+    required this.left,
+    required this.delay,
+    this.color = Colors.white,
+  });
+
+  @override
+  State<FloatingLetter> createState() => _FloatingLetterState();
+}
+
+class _FloatingLetterState extends State<FloatingLetter>
+    with SingleTickerProviderStateMixin {
+  late AnimationController controller;
+  late Animation<double> animation;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 3),
+    );
+
+    animation = Tween<double>(begin: 0, end: -12)
+        .chain(CurveTween(curve: Curves.easeInOut))
+        .animate(controller);
+
+    Future.delayed(Duration(seconds: widget.delay), () {
+      if (mounted) controller.repeat(reverse: true);
+    });
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: animation,
+      child: Text(
+        widget.text,
+        style: const TextStyle(
+          fontSize: 24,
+          color: Colors.white,
+          // fontFamily: 'Galmuri', // Removed since it might not be available, using default
+          shadows: [
+            Shadow(color: Colors.black, offset: Offset(2, 2)),
+          ],
+        ),
+      ),
+      builder: (context, child) {
+        return Positioned(
+          left: widget.left,
+          top: 60 + animation.value,
+          child: Opacity(
+            opacity: 0.8,
+              child: Text(   // 👈👈 바로 여기!!
+              widget.text,
+              style: TextStyle( // 👈 TextStyle 적용 위치
+                fontSize: 20,
+                color: widget.color, // 👈 색 여기서 먹음
+                fontFamily: 'Galmuri',
+                shadows: const [
+                  Shadow(
+                    color: Colors.black,
+                    offset: Offset(2, 2),
+          ),
+                ],
+              ),
+          ),
+        ),
+          );      },
+    );
+  }
+}
+
+
+class FloatingStar extends StatefulWidget {
+  final double left;
+  final double top;
+  final int delay;
+  final double size;
+
+  const FloatingStar({
+    super.key,
+    required this.left,
+    required this.top,
+    required this.delay,
+    this.size = 20,
+  });
+
+  @override
+  State<FloatingStar> createState() => _FloatingStarState();
+}
+
+class _FloatingStarState extends State<FloatingStar>
+    with SingleTickerProviderStateMixin {
+  late AnimationController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    );
+
+    Future.delayed(Duration(milliseconds: 400 * widget.delay), () {
+      if (mounted) {
+        controller.repeat(reverse: true);
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      left: widget.left,
+      top: widget.top,
+      child: FadeTransition(
+        opacity: Tween(begin: 0.3, end: 1.0).animate(
+          CurvedAnimation(parent: controller, curve: Curves.easeInOut),
+        ),
+        child: Icon(
+          Icons.star,
+          size: widget.size,
+          color: Colors.yellowAccent,
+          shadows: const [
+            Shadow(
+              color: Colors.black54,
+              offset: Offset(1, 1),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
