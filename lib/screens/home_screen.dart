@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../providers/game_provider.dart';
 import '../providers/word_provider.dart';
 import 'quiz_screen.dart';
+import 'statistics_screen.dart';
 
 /// 메인 홈 화면 - 심플한 카드 기반 UI (배경 포함)
 class HomeScreen extends StatefulWidget {
@@ -362,54 +363,9 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _showStats(BuildContext context) {
-    final gameProvider = context.read<GameProvider>();
-    final gameState = gameProvider.gameState;
-
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        backgroundColor: const Color(0xFF1a1f2e),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-          side: const BorderSide(color: Colors.white, width: 2),
-        ),
-        title: Text(
-          '학습 통계',
-          style: GoogleFonts.notoSans(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _StatRow('레벨', '${gameState.currentLevel}'),
-            const SizedBox(height: 12),
-            _StatRow('경험치', '${gameState.totalExp}'),
-            const SizedBox(height: 12),
-            _StatRow('코인', '${gameState.coins}'),
-            const SizedBox(height: 20),
-            _StatRow('마스터한 단어', '${gameState.masteredWords.length}개'),
-            const SizedBox(height: 12),
-            _StatRow('약한 단어', '${gameState.weakWords.length}개'),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text(
-              '확인',
-              style: GoogleFonts.notoSans(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-                color: const Color(0xFF4CAF50),
-              ),
-            ),
-          ),
-        ],
-      ),
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const StatisticsScreen()),
     );
   }
 }

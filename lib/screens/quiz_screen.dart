@@ -4,6 +4,7 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../providers/game_provider.dart';
 import '../providers/word_provider.dart';
+import '../providers/statistics_provider.dart';
 import '../models/word_model.dart';
 import '../widgets/pixel_button.dart';
 import '../widgets/battle_animation_widget.dart';
@@ -112,6 +113,24 @@ class _QuizScreenState extends State<QuizScreen> with SingleTickerProviderStateM
     });
     
     final isCorrect = selectedAnswer == currentWord.korean;
+    
+    // 통계 업데이트
+    final statsProvider = context.read<StatisticsProvider>();
+    final difficulty = wordProvider.currentDifficulty;
+    
+    // 단어 숙련도 업데이트
+    statsProvider.updateWordProficiency(
+      word: currentWord.english,
+      korean: currentWord.korean,
+      isCorrect: isCorrect,
+    );
+    
+    // 퀴즈 결과 업데이트
+    statsProvider.updateQuizResult(
+      isCorrect: isCorrect,
+      difficulty: difficulty,
+      solveTime: null, // TODO: 풀이 시간 추적 기능 추가
+    );
     
     if (isCorrect) {
       _correctCount++;

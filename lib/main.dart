@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'providers/game_provider.dart';
 import 'providers/word_provider.dart';
+import 'providers/statistics_provider.dart';
 import 'screens/home_screen.dart';
 
 void main() {
@@ -17,6 +18,7 @@ class EnglishQuizGame extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => GameProvider()),
         ChangeNotifierProvider(create: (_) => WordProvider()),
+        ChangeNotifierProvider(create: (_) => StatisticsProvider()),
       ],
       child: MaterialApp(
         title: 'English Quiz Adventure',
@@ -60,6 +62,10 @@ class _AppInitializerState extends State<AppInitializer> {
     // 단어 데이터 로드
     final wordProvider = context.read<WordProvider>();
     await wordProvider.loadWords();
+
+    // 통계 데이터 로드
+    final statsProvider = context.read<StatisticsProvider>();
+    await statsProvider.loadStatistics();
 
     setState(() {
       _isInitialized = true;

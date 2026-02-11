@@ -227,17 +227,21 @@ class _BattleAnimationWidgetState extends State<BattleAnimationWidget>
       assetPath = 'assets/images/characters/${characterTier}_walk.png';
     }
     
+    // ice_att.png와 gold_att.png는 이미지가 넓어서 width를 더 크게 설정
+    final isWideAttackSprite = widget.isAttacking && (characterTier == 'ice' || characterTier == 'gold');
+    final spriteWidth = isWideAttackSprite ? 170.0 : 120.0;
+    
     return Image.asset(
       assetPath,
-      width: 120,
-      height: 120,
+      width: spriteWidth,
+      height: 150,
       fit: BoxFit.fill, // Changed from contain to fill for consistent size
       errorBuilder: (context, error, stackTrace) {
         // Fallback to walk sprite if image not found
         return Image.asset(
           'assets/images/characters/warrior_walk.png',
-          width: 120,
-          height: 120,
+          width: 150,
+          height: 150,
           fit: BoxFit.fill,
         );
       },
