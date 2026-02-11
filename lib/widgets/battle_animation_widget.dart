@@ -229,7 +229,7 @@ class _BattleAnimationWidgetState extends State<BattleAnimationWidget>
     
     // ice_att.png와 gold_att.png는 이미지가 넓어서 width를 더 크게 설정
     final isWideAttackSprite = widget.isAttacking && (characterTier == 'ice' || characterTier == 'gold');
-    final spriteWidth = isWideAttackSprite ? 170.0 : 120.0;
+    final spriteWidth = isWideAttackSprite ? 190.0 : 120.0;
     
     return Image.asset(
       assetPath,
