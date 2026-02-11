@@ -23,6 +23,7 @@ class _QuizScreenState extends State<QuizScreen> with SingleTickerProviderStateM
   bool _isAnswered = false;
   int _correctCount = 0;
   int _wrongCount = 0;
+  int _consecutiveCorrect = 0; // Track consecutive correct answers
   bool _isAttacking = false;
   bool _isTakingDamage = false;
   
@@ -32,6 +33,12 @@ class _QuizScreenState extends State<QuizScreen> with SingleTickerProviderStateM
   @override
   void initState() {
     super.initState();
+    
+    // 퀴즈 시작 시 점수 초기화
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Provider.of<GameProvider>(context, listen: false).resetQuizScore();
+    });
+    
     _setupTts();
     _generateOptions();
     
@@ -108,6 +115,7 @@ class _QuizScreenState extends State<QuizScreen> with SingleTickerProviderStateM
     
     if (isCorrect) {
       _correctCount++;
+      _consecutiveCorrect++; // Increment consecutive correct
       gameProvider.addExp(10);
       gameProvider.addCoins(5);
       gameProvider.addMasteredWord(currentWord.english);
@@ -118,6 +126,7 @@ class _QuizScreenState extends State<QuizScreen> with SingleTickerProviderStateM
       });
     } else {
       _wrongCount++;
+      _consecutiveCorrect = 0; // Reset consecutive correct on wrong answer
       gameProvider.takeDamage(10);
       gameProvider.addWeakWord(currentWord.english);
       // Trigger damage animation
@@ -272,6 +281,8 @@ class _QuizScreenState extends State<QuizScreen> with SingleTickerProviderStateM
                       totalQuestions: wordProvider.currentQuizWords.length, // 동적 문항 수
                       isAttacking: _isAttacking,
                       isTakingDamage: _isTakingDamage,
+                      consecutiveCorrect: _consecutiveCorrect, // Pass consecutive correct count
+                      difficulty: wordProvider.currentDifficulty, // Pass difficulty
                     ),
                     
                     const SizedBox(height: 8),
@@ -380,26 +391,27 @@ class _ScoreBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.2),
-        borderRadius: BorderRadius.circular(20),
+        color: Colors.white.withOpacity(0.3),
+        borderRadius: BorderRadius.circular(25),
+        border: Border.all(color: color, width: 2),
       ),
       child: Row(
         children: [
-          Icon(icon, color: color, size: 28), // 24 → 28
-          const SizedBox(width: 8),
+          Icon(icon, color: color, size: 36), // 28 → 36 (크기 증가)
+          const SizedBox(width: 10),
           Text(
             '$count',
-            style: GoogleFonts.pressStart2p( // 더 명확한 폰트
+            style: GoogleFonts.pressStart2p(
               color: Colors.white,
-              fontSize: 24, // 20 → 24 (크기 증가)
+              fontSize: 32, // 24 → 32 (크기 증가)
               fontWeight: FontWeight.bold,
               shadows: [
                 const Shadow(
                   color: Colors.black,
-                  offset: Offset(2, 2),
-                  blurRadius: 3,
+                  offset: Offset(3, 3),
+                  blurRadius: 4,
                 ),
               ],
             ),
@@ -483,7 +495,7 @@ class _WordCard extends StatelessWidget {
  
 
 
-/// ?�단 ?�태 �?(HP �?코인)
+/// 상단 상태 바(HP 및 점수)
 class _StatusBar extends StatelessWidget {
   const _StatusBar();
 
@@ -497,8 +509,9 @@ class _StatusBar extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Row(
             children: [
-              // HP �?
-              Expanded(
+              // HP 바 - 화면 절반 정도 크기
+              Flexible(
+                flex: 1,
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(
@@ -520,29 +533,37 @@ class _StatusBar extends StatelessWidget {
                           ),
                         ),
                       ),
-                      // HP 텍스트 제거 (100/100 부분 삭제)
                     ],
                   ),
                 ),
               ),
               const SizedBox(width: 16),
               
-              // 코인
+              // 점수 표시 (코인 대신)
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withOpacity(0.3),
                   borderRadius: BorderRadius.circular(20),
+                  border: Border.all(color: Colors.amber, width: 2),
                 ),
                 child: Row(
                   children: [
-                    const Icon(Icons.monetization_on, color: Colors.amber, size: 20),
-                    const SizedBox(width: 4),
+                    const Icon(Icons.star, color: Colors.amber, size: 32), // 크기 증가
+                    const SizedBox(width: 8),
                     Text(
-                      '${gameState.coins}',
-                      style: const TextStyle(
+                      '${gameState.coins}', // 점수로 사용
+                      style: GoogleFonts.pressStart2p(
                         color: Colors.white,
+                        fontSize: 28, // 크기 증가
                         fontWeight: FontWeight.bold,
+                        shadows: [
+                          const Shadow(
+                            color: Colors.black,
+                            offset: Offset(2, 2),
+                            blurRadius: 3,
+                          ),
+                        ],
                       ),
                     ),
                   ],

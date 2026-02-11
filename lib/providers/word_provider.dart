@@ -10,9 +10,16 @@ class WordProvider extends ChangeNotifier {
   List<WordModel> _currentQuizWords = [];
   int _currentWordIndex = 0;
   
+  
   List<WordModel> get allWords => _allWords;
   List<WordModel> get currentQuizWords => _currentQuizWords;
   int get currentWordIndex => _currentWordIndex;
+  
+  // Get current quiz difficulty (from first word in quiz)
+  int get currentDifficulty {
+    if (_currentQuizWords.isEmpty) return 1;
+    return _currentQuizWords.first.difficulty;
+  }
   
   WordModel? get currentWord {
     if (_currentQuizWords.isEmpty || _currentWordIndex >= _currentQuizWords.length) {

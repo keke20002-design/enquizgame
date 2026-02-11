@@ -157,6 +157,12 @@ class GameProvider extends ChangeNotifier {
     saveGameState();
   }
   
+  /// 퀴즈 점수 초기화 (퀴즈 시작 시 호출)
+  void resetQuizScore() {
+    _gameState = _gameState.copyWith(coins: 0);
+    notifyListeners();
+  }
+  
   /// 게임 리셋
   Future<void> resetGame() async {
     _gameState = GameStateModel();

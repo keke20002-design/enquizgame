@@ -6,6 +6,8 @@ class BattleAnimationWidget extends StatefulWidget {
   final int totalQuestions; // Total number of questions (5, 10, 15, 20)
   final bool isAttacking; // 용사가 공격 중
   final bool isTakingDamage; // 용사가 피격 중
+  final int consecutiveCorrect; // Consecutive correct answers
+  final int difficulty; // Quiz difficulty (1: 쉬움, 2: 보통, 3: 어려움)
   final VoidCallback? onAnimationComplete;
 
   const BattleAnimationWidget({
@@ -14,6 +16,8 @@ class BattleAnimationWidget extends StatefulWidget {
     required this.totalQuestions, // 추가된 파라미터
     this.isAttacking = false,
     this.isTakingDamage = false,
+    this.consecutiveCorrect = 0, // Default to 0
+    this.difficulty = 1, // Default to easy
     this.onAnimationComplete,
   });
 
@@ -207,60 +211,83 @@ class _BattleAnimationWidgetState extends State<BattleAnimationWidget>
   Widget _buildWarriorSprite() {
     String assetPath;
     
+    // Determine character tier based on consecutive correct answers
+    String characterTier = _getCharacterTier();
+    
     // 피격 중일 때는 아픈 스프라이트
     if (widget.isTakingDamage) {
-      assetPath = 'assets/images/characters/warrior_ill.png';
+      assetPath = 'assets/images/characters/${characterTier}_ill.png';
     }
     // 공격 중일 때는 공격 스프라이트
     else if (widget.isAttacking) {
-      assetPath = 'assets/images/characters/attknight.png';
+      assetPath = 'assets/images/characters/${characterTier}_att.png';
     }
     // 평상시는 걷기 스프라이트
     else {
-      assetPath = 'assets/images/characters/warrior_walk.png';
+      assetPath = 'assets/images/characters/${characterTier}_walk.png';
     }
     
     return Image.asset(
       assetPath,
       width: 120,
       height: 120,
-      fit: BoxFit.contain,
+      fit: BoxFit.fill, // Changed from contain to fill for consistent size
       errorBuilder: (context, error, stackTrace) {
         // Fallback to walk sprite if image not found
         return Image.asset(
           'assets/images/characters/warrior_walk.png',
           width: 120,
           height: 120,
-          fit: BoxFit.contain,
+          fit: BoxFit.fill,
         );
       },
     );
+  }
+  
+  /// Get character tier based on consecutive correct answers
+  String _getCharacterTier() {
+    if (widget.consecutiveCorrect >= 5) {
+      return 'gold';
+    } else if (widget.consecutiveCorrect >= 3) {
+      return 'ice';
+    } else {
+      return 'warrior';
+    }
   }
 
   Widget _buildMonsterSprite() {
     String assetPath;
     
+    // Determine monster type based on difficulty
+    String monsterType = _getMonsterType();
+    
     // 용사가 공격 중일 때 (정답) 몬스터는 아픈 상태
     if (widget.isAttacking) {
-      assetPath = 'assets/images/characters/slimill.png';
+      // Determine damage effect based on character tier
+      String damagePrefix = _getDamagePrefix();
+      assetPath = 'assets/images/characters/${damagePrefix}${monsterType}_ill.png';
+    }
+    // 용사가 피격 중일 때 (오답) 몬스터는 공격 상태
+    else if (widget.isTakingDamage) {
+      assetPath = 'assets/images/characters/${monsterType}_att.png';
     }
     // 평상시는 걷기 스프라이트
     else {
-      assetPath = 'assets/images/characters/slimwalk.png';
+      assetPath = 'assets/images/characters/${monsterType}_walk.png';
     }
     
     return Image.asset(
       assetPath,
       width: 120,
       height: 120,
-      fit: BoxFit.contain,
+      fit: BoxFit.fill,
       errorBuilder: (context, error, stackTrace) {
         // Fallback to walk sprite if image not found
         return Image.asset(
           'assets/images/characters/slimwalk.png',
           width: 120,
           height: 120,
-          fit: BoxFit.contain,
+          fit: BoxFit.fill,
           errorBuilder: (context, error, stackTrace) {
             // Final fallback to icon
             return Container(
@@ -277,5 +304,37 @@ class _BattleAnimationWidgetState extends State<BattleAnimationWidget>
         );
       },
     );
+  }
+  
+  /// Get monster type based on difficulty
+  String _getMonsterType() {
+    // 1: 쉬움 = slim (default)
+    // 2: 보통 = gob (goblin)
+    // 3: 어려움 = dra (dragon)
+    if (widget.difficulty == 3) {
+      return 'dra';
+    } else if (widget.difficulty == 2) {
+      return 'gob';
+    } else {
+      return 'slim';
+    }
+  }
+  
+  /// Get damage prefix based on character tier
+  String _getDamagePrefix() {
+    String characterTier = _getCharacterTier();
+    
+    // ice warrior → ice_ prefix
+    if (characterTier == 'ice') {
+      return 'ice_';
+    }
+    // gold warrior → fire_ prefix
+    else if (characterTier == 'gold') {
+      return 'fire_';
+    }
+    // warrior → no prefix
+    else {
+      return '';
+    }
   }
 }
